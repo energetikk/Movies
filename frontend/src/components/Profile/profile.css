@@ -1,0 +1,228 @@
+.profile__container {
+  width: 410px;
+  padding-bottom: 50px;
+  /* min-height: 100vh; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 74px auto 0;
+  position: relative;
+}
+
+.profile__title {
+  margin: 0 0 110px 0;
+  padding: 0;
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 24px;
+  line-height: 29px;
+}
+
+.profile__info {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #424242;
+}
+
+.profile__info:last-of-type {
+  border: none;
+}
+
+.profile__info-edit {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #424242;
+}
+
+.profile__info-edit:last-of-type {
+  border: none;
+}
+
+.profile__value {
+  margin: 16px 0 16px 0;
+  padding: 0;
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+}
+
+.profile__parameter {
+  margin: 16px 0 16px 0;
+  padding: 0;
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 13px;
+  background-color: transparent;
+}
+
+.button__edit {
+  margin: 203px 0 16px 0;
+  background-color: transparent;
+  border: none;
+  color: white;
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 13px;
+  line-height: 16px;
+  cursor: pointer;
+}
+
+.button__edit:hover {
+  opacity: .8;
+  transition: opacity .2s 20ms ease-in-out;
+}
+
+.button__logout {
+  background-color: transparent;
+  border: none;
+  color: #EE3465;
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  cursor: pointer;
+}
+
+.button__logout:hover {
+  opacity: .8;
+  transition: opacity .2s 20ms ease-in-out;
+}
+
+.button__save-profile {
+  width: 410px;
+  height: 45px;
+  background-color: #3456F3;
+  color: white;
+  border: none;
+  border-radius: 3px;
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  line-height: 17px;
+  padding: 0;
+  margin: 223px 0 0 0;
+  cursor: pointer;
+}
+
+.button__save-profile:hover {
+  opacity: .8;
+  transition: opacity .2s 20ms ease-in-out;
+}
+
+.button__save-profile_error {
+  background-color: #F8F8F8;
+  color: #C2C2C2;
+}
+
+.profile__save {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.profile__error {
+  color: #FF004C;
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  position: absolute;
+  top: 425px;
+  left: 85px;
+}
+
+.form-button__profile {
+  /* margin: 223px 0 0; */
+  display: flex;
+  flex-direction: column;
+}
+
+.profile__value-edit {
+  margin: 16px 0 16px 0;
+  padding: 0;
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  background-color: transparent;
+  color: white;
+  border: none;
+  text-align: right;
+}
+
+.profile__value-edit:focus {
+  outline: 1px solid #FF004C;
+  border-radius: 2px;
+  box-shadow: 0 0 10px 5px rgba(235, 61, 61, .4)
+}
+
+
+.profile__sucsess-update-message {
+  margin: 0;
+  padding: 0;
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 14px;
+  color: #3DDC84;
+}
+
+.profile__sucsess-update-message_hidden {
+  display: none;
+}
+
+@media screen and (max-width: 768px) {
+  .profile__container {
+    /* margin: 236px auto; */
+  }
+
+  .profile__title {
+    margin: 0 0 80px 0;
+  }
+
+  .button__edit {
+    margin: 194px 0 15px 0;
+  }
+}
+
+@media screen and (max-width: 550px) {
+  .profile__container {
+    width: 300px;
+  }
+
+  .button__save-profile {
+    width: 290px;
+    height: 45px;
+  }
+
+  .button__edit {
+    /* margin-top: 250px; */
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .button__save-profile {
+    width: 260px;
+    height: 45px;
+    margin-top: 363px;
+  }
+
+  .profile__container {
+    width: 260px;
+    margin-top: 70px;
+  }
+
+  .profile__title {
+    margin-bottom: 65px;
+  }
+
+  .button__edit {
+    margin-top: 363px;
+  }
+}
+

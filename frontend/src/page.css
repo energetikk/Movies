@@ -1,0 +1,17 @@
+.page {
+    background-color: #202020;
+    color: white;
+    max-width: 1280px;
+    height: 100vh;
+    margin: 0 auto;
+  }
+
+  @media screen and (max-width: 768px) {
+
+  }
+
+  @media screen and (max-width: 320px) {
+    .page {
+      max-width: 320px;
+    }
+  }

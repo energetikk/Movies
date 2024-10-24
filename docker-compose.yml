@@ -1,0 +1,61 @@
+services:
+  
+  movies-app:
+    build:
+      context: ./frontend
+    container_name: frontend-movies_conatainer
+    networks:
+      - mern-net
+  
+  api-server:
+    build:
+      context: ./backend
+    container_name: backend-movies_conatainer
+    networks:
+      - mern-net
+    depends_on:
+      - mongo
+  
+  mongo:
+    image: mongo:8.0.1-noble
+    container_name: mongo-movies_conatainer
+    ports:
+      - "27017:27017"
+    networks:
+      - mern-net
+    volumes:
+      - mongo-data:/data/db
+  
+  nginx:
+    image: nginx:stable-alpine
+    container_name: nginx-movies_conatainer
+    restart: unless-stopped
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+      # - ./certbot/conf:/etc/letsencrypt
+      # - ./certbot/www:/var/www/certbot
+    depends_on:
+      - movies-app
+      - api-server  
+    ports:
+      - "80:80"
+      - "443:443"
+    networks:
+      - mern-net
+    
+  # certbot:
+  #   image: certbot/certbot
+  #   container_name: certbot_container
+  #   depends_on:
+  #     - nginx
+  #   volumes: 
+  #     - ./certbot/conf:/etc/letsencrypt
+  #     - ./certbot/www:/var/www/certbot
+  #   command: certonly --webroot --webroot-path=/var/www/certbot --agree-tos --email pavlikdemin@mail.ru -d mesto.paveldev.ru -d howtolearn.paveldev.ru -d movies.paveldev.ru -d paveldev.ru
+
+networks:
+  mern-net:
+    driver: bridge
+volumes:
+  mongo-data:
+    driver: local

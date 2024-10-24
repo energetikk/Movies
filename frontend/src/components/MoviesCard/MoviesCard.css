@@ -1,0 +1,176 @@
+.movie {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  width: 270px;
+  height: 218px;
+  margin: 0 0 32px 0;
+}
+
+.movies__element {
+  border-radius: 10px;
+  width: 100%;
+  background-color: #222222;
+  margin: 0 auto;
+}
+
+.movie:nth-child(4n) {
+  margin: 0 0 32px 0;
+}
+
+.movies-card-image {
+  object-fit: cover;
+  width: 270px;
+  height: 151px;
+  border-radius: 10px 10px 0 0;
+}
+
+.movies__card {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px 12px;
+}
+
+.movies__card-name {
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  max-width: 206px;
+  margin: 0;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  overflow: hidden;
+
+}
+
+.movies__button-like {
+  display: block;
+  width: 16px;
+  height: 16px;
+  background-color: #313131;
+  border: 2px white solid;
+  border-radius: 50%;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.movies__button-like:hover, .movies__button-like_active:hover {
+  opacity: .8;
+  transition: opacity .2s 20ms ease-in-out;
+}
+
+.movies__button-like_active {
+  background-color: #2BE080;
+  display: block;
+  width: 16px;
+  height: 16px;
+  border: 2px white solid;
+  border-radius: 50%;
+  background-size: 100%;
+  background-position: center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.movie__duration {
+  margin: 0;
+  padding-left: 12px;
+  padding-bottom: 14px;
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 400;
+  font-size: 11px;
+  line-height: 13px;
+  color: #8B8B8B;
+}
+
+.movies__button-delete {
+  background-color: transparent;
+  width: 16px;
+  height: 16px;
+  border: none;
+  background-image: url("../../images/icon_delete_from_favorite.svg");
+  background-size: cover;
+  background-position: center;
+  padding: 0;
+  cursor: pointer;
+}
+
+.movies__button-delete:hover {
+  opacity: .8;
+  transition: opacity .2s 20ms ease-in-out;
+}
+
+@media screen and (max-width: 1200px) {
+  .movie {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  .movie:nth-child(2n) {
+    margin: 0;
+  }
+
+}
+
+@media screen and (max-width: 768px) {
+  .movies-card {
+    width: 339px;
+    height: 190px;
+  }
+
+  .movie:nth-child(4n) {
+    margin: 0;
+  }
+
+  .movies__element {
+    width: 339px;
+  }
+
+  .movies-card-image {
+    width: 339px;
+    height: 190px;
+  }
+
+  .movie {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 339px;
+  }
+
+  .movie:nth-child(1n) {
+    margin: 0 0 36px 0;
+  }
+}
+
+@media screen and (max-width: 410px) {
+  .movies__element {
+    width: 300px;
+    justify-content: center;
+  }
+
+  .movie:nth-child(1n) {
+    margin: 0;
+  }
+
+  .movie {
+    width: 300px;
+  }
+
+  .movies-card-image {
+    width: 300px;
+    height: 168px;
+  }
+}
+
+@media screen and (max-width: 320px) {
+  .movie:nth-child(2n) {
+    margin: 0;
+    padding: 0;
+  }
+}

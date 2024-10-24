@@ -1,0 +1,14 @@
+.app__center {
+  background-color: #202020;
+  max-height: 100%;
+  margin: 0 auto;
+  max-width: 1280px;
+}
+
+@media screen and (max-width: 768px) {
+  .app__center {
+
+    max-width: 768px;
+    position: relative;
+  }
+}

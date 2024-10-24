@@ -1,0 +1,36 @@
+.navtab {
+  max-width: 1280px;
+  height: 66px;
+  background-color: #272727;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.navtab__link {
+  color: #FFF;
+  margin-right: 40px;
+  font-family: "Inter", "Arial", sans-serif;
+  font-weight: 500;
+  font-size: 13px;
+  line-height: 16px;
+  text-decoration: underline;
+  transition: opacity .2s ease-in-out;
+}
+
+.navtab__link:last-of-type {
+  margin: 0;
+}
+
+.navtab__link:hover {
+  opacity: .7;
+  cursor: pointer;
+}
+
+@media screen and (max-width: 320px) {
+  .navtab__link {
+    font-size: 11px;
+    margin-right: 24px;
+  }
+
+}
