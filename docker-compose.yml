@@ -5,14 +5,14 @@ services:
       context: ./frontend
     container_name: frontend-movies_conatainer
     networks:
-      - mern-net
+      - movies-net
   
   api-server:
     build:
       context: ./backend
     container_name: backend-movies_conatainer
     networks:
-      - mern-net
+      - movies-net
     depends_on:
       - mongo
   
@@ -22,7 +22,7 @@ services:
     ports:
       - "27017:27017"
     networks:
-      - mern-net
+      - movies-net
     volumes:
       - mongo-data:/data/db
   
@@ -32,6 +32,7 @@ services:
     restart: unless-stopped
     volumes:
       - ./nginx.conf:/etc/nginx/nginx.conf
+      - ./nginx-conf:/etc/nginx/sites-enabled/
       # - ./certbot/conf:/etc/letsencrypt
       # - ./certbot/www:/var/www/certbot
     depends_on:
@@ -41,7 +42,7 @@ services:
       - "80:80"
       - "443:443"
     networks:
-      - mern-net
+      - movies-net
     
   # certbot:
   #   image: certbot/certbot
@@ -54,7 +55,7 @@ services:
   #   command: certonly --webroot --webroot-path=/var/www/certbot --agree-tos --email pavlikdemin@mail.ru -d mesto.paveldev.ru -d howtolearn.paveldev.ru -d movies.paveldev.ru -d paveldev.ru
 
 networks:
-  mern-net:
+  movies-net:
     driver: bridge
 volumes:
   mongo-data:
